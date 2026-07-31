@@ -1,0 +1,1 @@
+ALTER TABLE "itens_pedido" ALTER COLUMN "preco_unitario" DROP NOT NULL;

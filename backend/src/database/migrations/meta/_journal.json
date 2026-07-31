@@ -1,0 +1,48 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1785290580674,
+      "tag": "0000_rare_ezekiel_stane",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1785290632691,
+      "tag": "0001_milky_ben_parker",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1785290648092,
+      "tag": "0002_talented_thor",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1785368357100,
+      "tag": "0003_cheerful_sasquatch",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1785372466466,
+      "tag": "0004_talented_the_twelve",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1785372941291,
+      "tag": "0005_nasty_shiva",
+      "breakpoints": true
+    }
+  ]
+}
