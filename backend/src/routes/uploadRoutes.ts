@@ -8,7 +8,7 @@ const controller = new UploadController();
 
 const upload = multer({ dest: 'uploads/' });
 
-router.post('/images', authMiddleware, upload.array('images', 10), (req, res) =>
+router.post('/images', authMiddleware, upload.array('images', 10), (req: any, res: any) =>
   controller.uploadImages(req, res),
 );
 
