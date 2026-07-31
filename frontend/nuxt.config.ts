@@ -37,7 +37,7 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { prerender: true },
+    // '/': { prerender: true },
     '/category/**': { ssr: true },
     '/product/**': { ssr: true },
     '/admin/**': { ssr: false }
