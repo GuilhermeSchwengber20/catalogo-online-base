@@ -17,7 +17,7 @@
           :src="item.imagem"
           :alt="item.titulo || 'Banner'"
           class="w-full h-full object-cover"
-          loading="lazy"
+          fetchpriority="high"
         >
       </NuxtLink>
 
@@ -29,7 +29,7 @@
           :src="item.imagem"
           :alt="item.titulo || 'Banner'"
           class="w-full h-full object-cover"
-          loading="lazy"
+          fetchpriority="high"
         >
       </div>
     </template>

@@ -5,8 +5,19 @@ export default defineNuxtConfig({
     '@pinia/nuxt'
   ],
 
+  features: {
+    inlineStyles: true
+  },
+
+  // fonts: {
+  //   defaults: {
+  //     preload: true,
+  //   }
+  // },
+
   ui: {
-    colorMode: false
+    colorMode: false,
+    fonts: false
   },
 
   ssr: true,
@@ -23,7 +34,14 @@ export default defineNuxtConfig({
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
       link: [
-        { rel: 'icon', href: '/favicon.ico' }
+        { rel: 'icon', href: '/favicon.ico' },
+        {
+          rel: 'preload',
+          href: '/fonts/font-main.woff2',
+          as: 'font',
+          type: 'font/woff2',
+          crossorigin: 'anonymous'
+        }
       ]
     }
   },
@@ -47,7 +65,10 @@ export default defineNuxtConfig({
 
   nitro: {
     minify: true,
-    compressPublicAssets: true
+    compressPublicAssets: {
+      gzip: true,
+      brotli: true
+    },
   },
 
   eslint: {

@@ -1,6 +1,19 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
+body {
+ font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+@font-face {
+  font-family: 'MinhaFonteLocal';
+  src: url('/fonts/font-main.woff2') format('woff2');
+  font-display: swap; /* Exibe o texto instantaneamente com fonte nativa enquanto baixa */
+  font-weight: 100 900; /* Ajuste se for uma fonte variável (variable font) */
+  font-style: normal;
+}
+
+
 @theme static {
   --font-sans: 'Inter', sans-serif;
 
