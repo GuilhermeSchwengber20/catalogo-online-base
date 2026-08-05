@@ -141,6 +141,30 @@
               </div>
             </template>
           </UFileUpload>
+          <div class="flex flex-col gap-3 mt-2">
+            <div
+              v-if="imageUrls.length"
+              class="flex flex-wrap gap-2"
+            >
+              <div
+                v-for="(img, index) in imageUrls"
+                :key="index"
+                class="relative w-20 h-20 rounded-lg overflow-hidden border border-warm-200"
+              >
+                <img
+                  :src="img.url"
+                  alt=""
+                  class="w-full h-full object-cover"
+                >
+                <UButton
+                  class="absolute top-1 right-1 w-5 h-5 rounded-full bg-black/50 text-white flex items-center justify-center text-xs"
+                  @click.stop="removeImage(index)"
+                >
+                  &times;
+                </UButton>
+              </div>
+            </div>
+          </div>
         </UFormField>
 
         <div class="flex items-center gap-3 pt-2">
@@ -266,5 +290,10 @@ async function handleSaveImages() {
 
     images.value = []
   }
+}
+
+function removeImage(index: number) {
+  // remover imagem aqui talvez chamando um serviço para deletar do servidor, se necessário
+  imageUrls.value.splice(index, 1)
 }
 </script>

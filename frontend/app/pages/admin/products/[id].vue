@@ -291,6 +291,7 @@ onMounted(async () => {
     if (prodResponse.success) {
       const p = prodResponse.data
       form.nome = p.nome
+      console.log(p);
       form.categoriaId = p.categoriaId
       form.descricao = p.descricao || ''
       form.preco = p.preco
@@ -311,7 +312,8 @@ onMounted(async () => {
     } else {
       errorMsg.value = 'Produto não encontrado'
     }
-  } catch {
+  } catch (err: any) {
+    console.log(err);
     errorMsg.value = 'Erro ao carregar produto'
   } finally {
     loading.value = false

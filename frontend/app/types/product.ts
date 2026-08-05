@@ -1,5 +1,10 @@
 import type { Category } from "./category"
 
+
+/*
+Melhorar essa interface (Esta usando tanto para o metodo de create/update quanto para o retorno de getAll/getById que possui retornos diferente)
+create/update precisa enviar o categoriaId, enquanto o retorno de getAll/getById retorna a categoria completa.
+*/ 
 export interface Product {
   id: string
   nome: string
@@ -14,6 +19,7 @@ export interface Product {
   imagens?: ProductImage[]
   createdAt: string
   updatedAt: string
+  categoriaId: string
   categoria: Category
 }
 
