@@ -2,7 +2,6 @@
   <UCarousel
     :items="banners"
     :ui="{ item: 'basis-full' }"
-    arrows
     indicators
     autoplay
     class="w-full"

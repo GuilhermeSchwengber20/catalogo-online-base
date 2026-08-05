@@ -76,12 +76,19 @@
     </template>
 
     <LazyCatalogProductPurchaseDrawer
-      v-if="selectedProduct"
+      v-if="selectedProduct && isMobile"
       :open="drawerOpen"
       :product="selectedProduct"
       @close="drawerOpen = false"
       @add-to-cart="handleAddToCart"
-    />  
+    />
+    <LazyCatalogProductPurchaseDialog
+      v-else-if="selectedProduct && !isMobile"
+      v-model:open="modalOpen"
+      :product="selectedProduct"
+      @close="selectedProduct = null"
+      @add-to-cart="handleAddToCart"
+    />
   </div>
 </template>
 
@@ -89,11 +96,14 @@
 import type { Product } from '~/types/product'
 const {data, pending, error, refresh } = await useCatalogHome()
 const { settings } = useCatalogSettings();
+const { isMobile } = useDevice()
 
 const drawerOpen = ref(false)
+const modalOpen = ref(false)
 const selectedProduct = ref<Product | null>(null)
 
 const cartStore = useCartStore()
+
 
 useSeoMeta({
   title: () => settings.value?.nomeLoja ? `${settings.value?.nomeLoja} - Catálogo Online` : 'Donna Decor Imports - Catálogo Online',
@@ -103,7 +113,13 @@ useSeoMeta({
 
 function openDrawer(product: Product) {
   selectedProduct.value = product
-  drawerOpen.value = true
+
+  if(isMobile) {
+    drawerOpen.value = true
+    return;
+  }
+  modalOpen.value = true
+  
 }
 
 function handleAddToCart(product: Product, quantity: number) {
