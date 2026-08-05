@@ -291,7 +291,6 @@ onMounted(async () => {
     if (prodResponse.success) {
       const p = prodResponse.data
       form.nome = p.nome
-      console.log(p);
       form.categoriaId = p.categoriaId
       form.descricao = p.descricao || ''
       form.preco = p.preco
