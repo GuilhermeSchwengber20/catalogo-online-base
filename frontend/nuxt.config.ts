@@ -2,7 +2,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
     '@nuxt/ui',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    '@nuxt/image'
   ],
 
   features: {
@@ -14,6 +15,12 @@ export default defineNuxtConfig({
   //     preload: true,
   //   }
   // },
+  image: {
+    domains: [
+      '://cloudinary.com',
+      '://unsplash.com'
+    ]
+  },
 
   ui: {
     colorMode: false,

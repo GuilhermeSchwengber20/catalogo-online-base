@@ -5,12 +5,15 @@
       class="flex flex-col flex-1"
     >
       <div class="relative aspect-square overflow-hidden bg-warm-100">
-        <img
+        <NuxtImg
           :src="image"
+          width="350"
+          height="460"
+          format="webp"
           :alt="name"
           class="w-full h-full object-cover"
           loading="lazy"
-        >
+        />
 
         <CatalogPromotionBadge
           v-if="promotionalPrice"
